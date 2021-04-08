@@ -1,0 +1,19 @@
+<h2 id="pwd">Randomly Generated numbers will appear here:</h2>
+<script>
+function generatePassword() {
+    var length = document.getElementById("length").value,
+        charset = "0123456789",
+        retVal = "";
+    for (var i = 0, n = charset.length; i < length; ++i) {
+        retVal += charset.charAt(Math.floor(Math.random() * n));
+    }
+    document.getElementById("pwd").innerHTML = retVal;
+    //return retVal;
+}
+</script>
+
+Numbers Length:<br />
+<input type="number" id="length" value="8" min="1"><br/><br/>
+<input type="submit" align="center" onclick="generatePassword();" value="Generate Numbers">
+
+<br />
